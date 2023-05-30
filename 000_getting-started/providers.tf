@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
     organization = "sagar_darekar"
 
     workspaces {
@@ -26,5 +26,5 @@ provider "aws" {
   region     = "eu-west-1"
   access_key = "ACCESS_KEY"
   secret_key = "SECRET_KEY"
-  alias = "eu"
+  alias      = "eu"
 }

@@ -13,3 +13,15 @@ provider "aws" {
   access_key = "ACCESS_KEY"
   secret_key = "SECRET_KEY"
 }
+
+
+resource "aws_instance" "web" {
+  ami           = "ami-0607784b46cbe5816"
+  instance_type ="t2.micro"
+  provisioner "local-exec" {
+    command = "echo ${self.private_ip} >> private_ips.txt"
+  }
+  tags = {
+    Name = "HelloWorld"
+  }
+}
